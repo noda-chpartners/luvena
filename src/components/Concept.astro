@@ -1,0 +1,79 @@
+---
+import Frame from "./Frame.astro";
+import hallway from "../assets/images/line_oa_chat_261002_094504.jpg";
+import candle from "../assets/images/line_oa_chat_261002_094501.jpg";
+
+const pillars = [
+  {
+    index: "01",
+    title: "完全予約制",
+    text: "お迎えするのは、ご予約のお客様おひとりです。席はひとつ。他の予定を気にせず、部屋を専有できます。",
+  },
+  {
+    index: "02",
+    title: "星空の部屋",
+    text: "天井には星が広がります。月の光のような照明のなかで、頭を預けてください。",
+  },
+  {
+    index: "03",
+    title: "24時間",
+    text: "平日も土日祝も、営業は24時間です。定休日は不定休。ご来店の前に、空き状況をご確認ください。",
+  },
+];
+---
+
+<section class="statement">
+  <div class="wrap statement__inner">
+    <p class="eyebrow" data-reveal>One seat, beneath the moon.</p>
+    <h2 data-reveal>ひとりだけの夜空を、<br />用意しています。</h2>
+  </div>
+</section>
+
+<section class="section concept" id="concept">
+  <div class="wrap concept__grid">
+    <div class="concept__copy">
+      <p class="eyebrow" data-reveal>01 — Concept</p>
+      <h2 data-reveal>夜のために、<br />席はひとつ。</h2>
+      <div class="concept__body" data-reveal>
+        <p>
+          Luvena～luna Venus～は、月と金星の名を持つプライベートサロンです。よもぎの温もりとヘッドスパで、日常の輪郭を静かにほどいていきます。
+        </p>
+        <p>
+          天満橋の通りから少し入った部屋で、外の時間は少し遠くなります。ご予約はLINEから。コースと日時を、事前にお知らせください。
+        </p>
+      </div>
+    </div>
+    <div class="concept__photos">
+      <Frame
+        src={hallway}
+        alt="間接照明の廊下。白いファーラグの上に並ぶスリッパ"
+        caption="Entrance"
+        sizes="(max-width: 900px) 62vw, 28vw"
+        position="center 70%"
+        class="concept__photo concept__photo--main"
+      />
+      <Frame
+        src={candle}
+        alt="丸いサイドテーブルの上で灯る、ガラスのキャンドル"
+        caption="Light"
+        sizes="(max-width: 900px) 38vw, 18vw"
+        position="center 40%"
+        class="concept__photo concept__photo--sub"
+      />
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ol class="pillars">
+      {
+        pillars.map((item) => (
+          <li class="pillar" data-reveal>
+            <span class="pillar__index">{item.index}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

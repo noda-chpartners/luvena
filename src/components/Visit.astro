@@ -1,0 +1,52 @@
+---
+import { site } from "../data/site";
+import Frame from "./Frame.astro";
+import slippers from "../assets/images/line_oa_chat_261002_094451.jpg";
+
+const steps = [
+  {
+    index: "01",
+    title: "LINEで予約",
+    text: "公式アカウントから、ご希望の日時とコースをお送りください。不定休のため、空き状況もこちらでご確認いただけます。",
+  },
+  {
+    index: "02",
+    title: "天満橋から4分",
+    text: `${site.station}より${site.walk}。${site.building} です。完全予約制のため、ご予約のないご来店はご遠慮ください。`,
+  },
+  {
+    index: "03",
+    title: "星の下で",
+    text: "スリッパに履き替え、月の光のような部屋で施術をお受けください。終わりの時間まで、席はあなただけのものになります。",
+  },
+];
+---
+
+<section class="section visit" id="visit">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Visit</p>
+    <h2 data-reveal>ご来店まで。</h2>
+    <ol class="steps">
+      {
+        steps.map((step) => (
+          <li class="step" data-reveal>
+            <span class="step__index">{step.index}</span>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+  <div class="wrap wrap--wide visit__photo">
+    <Frame
+      src={slippers}
+      alt="白いファーラグの上に並んだスリッパと、足元を照らす間接照明"
+      caption="Welcome"
+      sizes="(max-width: 800px) 100vw, 90vw"
+      position="center 72%"
+      widths={[640, 960, 1200]}
+      class="visit__frame"
+    />
+  </div>
+</section>

@@ -1,0 +1,56 @@
+---
+import { mapEmbed, mapLink, site } from "../data/site";
+import Icon from "./Icon.astro";
+---
+
+<section class="section access" id="access">
+  <div class="wrap access__grid">
+    <div class="access__copy">
+      <p class="eyebrow" data-reveal>04 — Access</p>
+      <h2 data-reveal>天満橋から、<br />徒歩4分。</h2>
+      <address class="access__address" data-reveal>
+        <span>〒{site.postal}</span>
+        <span>{site.region}{site.locality}{site.street}</span>
+        <span>{site.building}</span>
+      </address>
+      <a class="access__phone" href={`tel:${site.phoneTel}`} data-reveal>
+        <Icon name="phone" />
+        <span>{site.phoneDisplay}</span>
+      </a>
+      <dl class="facts" data-reveal>
+        <div>
+          <dt>平日</dt>
+          <dd>{site.hoursWeekday}</dd>
+        </div>
+        <div>
+          <dt>土日祝</dt>
+          <dd>{site.hoursHoliday}</dd>
+        </div>
+        <div>
+          <dt>定休日</dt>
+          <dd>{site.closed}</dd>
+        </div>
+        <div>
+          <dt>席数</dt>
+          <dd>{site.seats}（完全予約制）</dd>
+        </div>
+        <div>
+          <dt>最寄駅</dt>
+          <dd>{site.station} {site.walk}</dd>
+        </div>
+      </dl>
+      <a class="text-link" href={mapLink} target="_blank" rel="noopener noreferrer">
+        <Icon name="pin" />
+        <span>Googleマップで開く</span>
+      </a>
+    </div>
+    <div class="access__map" data-reveal>
+      <iframe
+        title="Luvena～luna Venus～ 周辺の地図"
+        src={mapEmbed}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>

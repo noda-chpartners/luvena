@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import { site } from "../data/site";
+import Icon from "./Icon.astro";
+import logo from "../assets/images/logo.png";
+import room from "../assets/images/line_oa_chat_261002_094508.jpg";
+---
+
+<section class="hero" id="top" data-hero-root>
+  <div class="hero__copy">
+    <p class="eyebrow" data-hero="kicker">Private Head Spa — Temmabashi</p>
+    <div class="hero__logo" data-hero="logo">
+      <Image
+        src={logo}
+        alt="Luvena～luna Venus～のロゴ。三日月と海、雲をあしらったマーク"
+        widths={[260, 420, 640]}
+        sizes="(max-width: 600px) 68vw, 260px"
+        loading="eager"
+        quality={82}
+        class="hero__mark"
+      />
+    </div>
+    <p class="hero__reserve-note" data-hero="note">完全予約制 / 1席</p>
+    <h1 data-hero="title">月の下で、<br />ひとり静かに。</h1>
+    <p class="hero__lead" data-hero="lead">
+      {site.name}。天満橋駅から{site.walk}、ご予約のお客様だけをお迎えするヘッドスパです。
+    </p>
+    <ul class="hero__meta">
+      <li data-hero="meta">{site.seats}</li>
+      <li data-hero="meta">24時間</li>
+      <li data-hero="meta">{site.station} {site.walk}</li>
+    </ul>
+    <div class="hero__actions">
+      <a class="btn btn--solid" data-hero="actions" href={site.line} target="_blank" rel="noopener noreferrer">
+        <Icon name="line" />
+        <span>LINEで予約する</span>
+      </a>
+      <a class="btn btn--ghost" data-hero="actions" href="#menu">
+        <span>メニューを見る</span>
+        <Icon name="arrow" />
+      </a>
+    </div>
+    <a class="hero__scroll" href="#concept" data-hero="scroll">
+      <span>Scroll</span>
+      <i></i>
+    </a>
+  </div>
+  <div class="hero__visual" data-hero-visual>
+    <Image
+      src={room}
+      alt="星空を投影した施術室。Luvenaの三日月をあしらったブランケットと、ベージュのチェア"
+      widths={[640, 960, 1108]}
+      sizes="(max-width: 900px) 100vw, 54vw"
+      loading="eager"
+      quality={78}
+      class="hero__photo"
+    />
+  </div>
+</section>

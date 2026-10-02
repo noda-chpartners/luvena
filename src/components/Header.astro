@@ -1,0 +1,42 @@
+---
+import { site } from "../data/site";
+import Icon from "./Icon.astro";
+
+const lineLabel = "LINEで予約する";
+---
+
+<header class="header" data-header>
+  <a class="brand" href="#top">
+    <span class="brand__name">{site.nameEn}</span>
+    <span class="brand__sub">{site.nameSub}</span>
+  </a>
+
+  <div class="header__tools">
+    <a class="header__reserve" href={site.line} target="_blank" rel="noopener noreferrer">
+      {lineLabel}
+    </a>
+    <button
+      class="nav-toggle"
+      type="button"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span class="nav-toggle__lines" aria-hidden="true"></span>
+      <span class="sr-only">メニュー</span>
+    </button>
+  </div>
+
+  <nav class="nav" id="site-nav" data-nav>
+    <ul class="nav__list">
+      <li><a href="#concept">コンセプト</a></li>
+      <li><a href="#salon">サロン</a></li>
+      <li><a href="#menu">メニュー</a></li>
+      <li><a href="#access">アクセス</a></li>
+    </ul>
+    <a class="btn btn--solid nav__cta" href={site.line} target="_blank" rel="noopener noreferrer">
+      <Icon name="line" />
+      <span>{lineLabel}</span>
+    </a>
+  </nav>
+</header>

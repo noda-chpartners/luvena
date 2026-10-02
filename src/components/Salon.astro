@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import Frame from "./Frame.astro";
+import star from "../assets/images/line_oa_chat_261002_094454.jpg";
+import vanity from "../assets/images/line_oa_chat_261002_094516.jpg";
+import sofa from "../assets/images/line_oa_chat_261002_094522.jpg";
+import chair from "../assets/images/line_oa_chat_261002_094533.jpg";
+import moon from "../assets/images/line_oa_chat_261002_094536.jpg";
+---
+
+<section class="section salon" id="salon">
+  <div class="wrap salon__head">
+    <p class="eyebrow" data-reveal>02 — Salon</p>
+    <div class="salon__title">
+      <h2 data-reveal>星を見上げて、<br />休む部屋。</h2>
+      <p data-reveal>
+        施術椅子、待合のソファ、ドレッサー。必要なものだけを置いた、一席のための空間です。
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap wrap--wide">
+    <div class="gallery">
+      <Frame
+        src={chair}
+        alt="三日月のブランケットをかけたベージュの施術チェア"
+        caption="Chair"
+        sizes="(max-width: 800px) 100vw, 42vw"
+        position="center 45%"
+        class="gallery__chair"
+      />
+      <Frame
+        src={star}
+        alt="天井いっぱいに投影された、天の川のような星空"
+        caption="Ceiling"
+        sizes="(max-width: 800px) 50vw, 24vw"
+        position="center"
+        class="gallery__star"
+      />
+      <Frame
+        src={vanity}
+        alt="丸いミラーライトとスキンケアが並ぶ、白いドレッサー"
+        caption="Vanity"
+        sizes="(max-width: 800px) 50vw, 24vw"
+        position="center"
+        class="gallery__vanity"
+      />
+      <Frame
+        src={sofa}
+        alt="Luvenaのクッションを置いた、ベージュの二人掛けソファ"
+        caption="Sofa"
+        sizes="(max-width: 800px) 100vw, 46vw"
+        position="center 60%"
+        class="gallery__sofa"
+      />
+    </div>
+  </div>
+</section>
+
+<figure class="band" data-photo>
+  <Image
+    src={moon}
+    alt="壁に投影された月と川、花の光。部屋の奥に施術チェアが見える"
+    widths={[640, 960, 1108]}
+    sizes="100vw"
+    loading="lazy"
+    quality={76}
+    class="band__img"
+  />
+  <figcaption>Moonlight</figcaption>
+</figure>

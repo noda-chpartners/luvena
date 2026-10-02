@@ -1,0 +1,34 @@
+---
+import { site } from "../data/site";
+import Icon from "./Icon.astro";
+---
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="footer__name">{site.name}</p>
+      <p class="footer__en">{site.nameSub}</p>
+    </div>
+    <address>
+      <span>〒{site.postal}</span>
+      <span>{site.region}{site.locality}{site.street}</span>
+      <span>{site.building}</span>
+      <span>{site.station} {site.walk}</span>
+    </address>
+    <div class="footer__links">
+      <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+      <a href={site.line} target="_blank" rel="noopener noreferrer">
+        <Icon name="line" />
+        <span>LINE</span>
+      </a>
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer">
+        <Icon name="instagram" />
+        <span>{site.instagramHandle}</span>
+      </a>
+    </div>
+  </div>
+  <div class="wrap footer__bar">
+    <p>完全予約制 · {site.seats} · {site.closed}</p>
+    <p>&copy; {new Date().getFullYear()} {site.name}</p>
+  </div>
+</footer>

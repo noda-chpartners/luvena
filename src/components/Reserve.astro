@@ -1,0 +1,28 @@
+---
+import { site } from "../data/site";
+import Icon from "./Icon.astro";
+---
+
+<section class="reserve" id="reserve">
+  <div class="wrap reserve__inner">
+    <p class="eyebrow" data-reveal>Reservation</p>
+    <h2 data-reveal>ご予約は、LINEから。</h2>
+    <p data-reveal>
+      空き状況とコースは、公式アカウントでご案内しています。お電話でも受け付けています。
+    </p>
+    <div class="reserve__actions" data-reveal>
+      <a class="btn btn--solid" href={site.line} target="_blank" rel="noopener noreferrer">
+        <Icon name="line" />
+        <span>LINEで予約する</span>
+      </a>
+      <a class="btn btn--ghost" href={site.instagram} target="_blank" rel="noopener noreferrer">
+        <Icon name="instagram" />
+        <span>Instagram</span>
+      </a>
+      <a class="btn btn--ghost" href={`tel:${site.phoneTel}`}>
+        <Icon name="phone" />
+        <span>{site.phoneDisplay}</span>
+      </a>
+    </div>
+  </div>
+</section>

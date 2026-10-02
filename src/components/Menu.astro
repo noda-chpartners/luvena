@@ -1,0 +1,56 @@
+---
+import { courses, special, yen } from "../data/site";
+import Frame from "./Frame.astro";
+import yomogi from "../assets/images/line_oa_chat_261002_094447.jpg";
+---
+
+<section class="section menu" id="menu">
+  <div class="wrap">
+    <div class="menu__head">
+      <p class="eyebrow" data-reveal>03 — Menu</p>
+      <h2 data-reveal>五つのコース。</h2>
+      <p class="menu__intro" data-reveal>
+        60分のスタンダードから、120分のラグジュアリーまで。女性限定の温活リセットは、よもぎ蒸しとヘッドスパを組み合わせたセットです。
+      </p>
+    </div>
+
+    <ol class="courses">
+      {
+        courses.map((course) => (
+          <li class="course" data-reveal>
+            <p class="course__time">
+              <span class="course__min">{course.minutes}</span>
+              <span class="course__unit">min</span>
+            </p>
+            <div class="course__body">
+              <h3>{course.name}</h3>
+              <p>{course.text}</p>
+            </div>
+            <p class="course__price">{yen(course.price)}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <article class="special" data-reveal>
+      <Frame
+        src={yomogi}
+        alt="木製のよもぎ蒸し椅子。隣のテーブルにはキャンドルとボトル"
+        sizes="(max-width: 800px) 100vw, 38vw"
+        widths={[400, 664]}
+        position="center"
+        class="special__photo"
+      />
+      <div class="special__copy">
+        <p class="eyebrow">Special Course</p>
+        <p class="special__badge">{special.badge}</p>
+        <h3>
+          <span>{special.minutes}分</span>
+          {special.name}
+        </h3>
+        <p>{special.text}</p>
+        <p class="special__price">{yen(special.price)}</p>
+      </div>
+    </article>
+  </div>
+</section>
