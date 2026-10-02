@@ -1,9 +1,11 @@
+export const siteUrl = "https://luvena.pages.dev";
+
 export const site = {
   name: "Luvena～luna Venus～",
   nameEn: "Luvena",
   nameSub: "luna Venus",
   description:
-    "大阪・天満橋駅徒歩4分。完全予約制・1席のプライベートヘッドスパ Luvena～luna Venus～。平日・土日祝ともに24時間。女性限定の温活リセットもご用意しています。",
+    "大阪市中央区・天満橋駅徒歩4分の完全予約制ヘッドスパ Luvena～luna Venus～。1席だけのプライベート空間で、ドライヘッドスパと女性限定の温活リセットをご用意。平日・土日祝24時間。ご予約はLINEから。",
   phoneDisplay: "070-9443-5678",
   phoneTel: "07094435678",
   postal: "540-0033",

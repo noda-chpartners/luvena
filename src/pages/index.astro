@@ -9,18 +9,24 @@ import Visit from "../components/Visit.astro";
 import Access from "../components/Access.astro";
 import Reserve from "../components/Reserve.astro";
 import Footer from "../components/Footer.astro";
-import { courses, site, special } from "../data/site";
+import { courses, mapLink, site, siteUrl, special } from "../data/site";
+
+const pageUrl = `${siteUrl}/`;
+const menuUrl = `${siteUrl}/#menu`;
+const salonId = `${siteUrl}/#identity`;
 
 const offers = [
   ...courses.map((course) => ({
     "@type": "Offer",
     name: `${course.minutes}分 ${course.name}`,
+    url: menuUrl,
     price: String(course.price),
     priceCurrency: "JPY",
   })),
   {
     "@type": "Offer",
     name: `${special.minutes}分 ${special.name}（${special.badge}）`,
+    url: menuUrl,
     price: String(special.price),
     priceCurrency: "JPY",
   },
@@ -28,40 +34,57 @@ const offers = [
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "BeautySalon",
-  name: site.name,
-  description: site.description,
-  telephone: `+81-${site.phoneDisplay.slice(1)}`,
-  image: "/ogp.jpg",
-  priceRange: "¥6000-¥25000",
-  currenciesAccepted: "JPY",
-  address: {
-    "@type": "PostalAddress",
-    postalCode: site.postal,
-    addressRegion: site.region,
-    addressLocality: site.locality,
-    streetAddress: `${site.street} ${site.building}`,
-    addressCountry: "JP",
-  },
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    opens: "00:00",
-    closes: "23:59",
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "メニュー",
-    itemListElement: offers,
-  },
+  "@graph": [
+    {
+      "@type": "BeautySalon",
+      "@id": salonId,
+      name: site.name,
+      alternateName: [site.nameEn, site.nameSub],
+      description: site.description,
+      url: pageUrl,
+      image: `${siteUrl}/ogp.jpg`,
+      telephone: "+81-70-9443-5678",
+      priceRange: "¥6000-¥25000",
+      currenciesAccepted: "JPY",
+      address: {
+        "@type": "PostalAddress",
+        postalCode: site.postal,
+        addressRegion: site.region,
+        addressLocality: site.locality,
+        streetAddress: `${site.street} ${site.building}`,
+        addressCountry: "JP",
+      },
+      hasMap: mapLink,
+      sameAs: [site.instagram, site.line],
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "メニュー",
+        itemListElement: offers,
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: pageUrl,
+      name: site.name,
+      inLanguage: "ja",
+      publisher: { "@id": salonId },
+    },
+  ],
 };
 ---
 
