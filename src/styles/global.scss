@@ -6,8 +6,8 @@ $gold: #c6a37a;
 $gold-2: #e7d3b4;
 $line: rgba(198, 163, 122, 0.32);
 $serif: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
-$en: "Cormorant Garamond", "Times New Roman", serif;
 $sans: "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", sans-serif;
+$en: $sans;
 
 *,
 *::before,
@@ -147,7 +147,6 @@ input {
   color: $gold;
   font-family: $en;
   font-size: 16px;
-  font-style: italic;
   letter-spacing: 0.18em;
 }
 
@@ -256,7 +255,6 @@ input {
   color: $gold;
   font-family: $en;
   font-size: 13px;
-  font-style: italic;
   letter-spacing: 0.22em;
 }
 
@@ -457,7 +455,6 @@ input {
   color: $gold-2;
   font-family: $en;
   font-size: 14px;
-  font-style: italic;
   letter-spacing: 0.18em;
   text-decoration: none;
 }
@@ -559,7 +556,6 @@ input {
   color: $gold;
   font-family: $en;
   font-size: 26px;
-  font-style: italic;
   letter-spacing: 0.04em;
 }
 
@@ -665,7 +661,6 @@ input {
   color: $cream;
   font-family: $en;
   font-size: 15px;
-  font-style: italic;
   letter-spacing: 0.16em;
 }
 
@@ -700,7 +695,6 @@ input {
   color: $cream;
   font-family: $en;
   font-size: 16px;
-  font-style: italic;
   letter-spacing: 0.18em;
 }
 
@@ -738,20 +732,20 @@ input {
 
 .course__min {
   display: block;
-  font-family: $en;
-  font-size: 44px;
+  font-family: $serif;
+  font-size: 40px;
   font-weight: 500;
-  line-height: 0.9;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1;
 }
 
 .course__unit {
   display: block;
   margin-top: 6px;
   color: $gold;
-  font-family: $en;
-  font-size: 15px;
-  font-style: italic;
-  letter-spacing: 0.14em;
+  font-family: $serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
 }
 
 .course__body p {
@@ -763,10 +757,11 @@ input {
 .special__price {
   margin: 0;
   color: $gold-2;
-  font-family: $en;
-  font-size: 34px;
+  font-family: $serif;
+  font-size: 32px;
   font-weight: 500;
-  letter-spacing: 0.03em;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: 0.04em;
   line-height: 1;
 }
 
@@ -809,10 +804,10 @@ input {
   display: block;
   margin-bottom: 6px;
   color: $gold;
-  font-family: $en;
+  font-family: $serif;
   font-size: 18px;
-  font-style: italic;
-  letter-spacing: 0.12em;
+  font-variant-numeric: lining-nums;
+  letter-spacing: 0.08em;
 }
 
 .special__copy > p:not(.eyebrow):not(.special__badge):not(.special__price) {
@@ -971,7 +966,6 @@ input {
   margin: 6px 0 0;
   color: $gold;
   font-family: $en;
-  font-style: italic;
   letter-spacing: 0.16em;
 }
 
