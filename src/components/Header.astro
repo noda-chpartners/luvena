@@ -3,6 +3,7 @@ import { site } from "../data/site";
 import Icon from "./Icon.astro";
 
 const lineLabel = "LINEで予約する";
+const hotpepperLabel = "ホットペッパーで予約";
 ---
 
 <header class="header" data-header>
@@ -12,8 +13,8 @@ const lineLabel = "LINEで予約する";
   </a>
 
   <div class="header__tools">
-    <a class="header__reserve" href={site.line} target="_blank" rel="noopener noreferrer">
-      {lineLabel}
+    <a class="header__reserve" href={site.hotpepper} target="_blank" rel="noopener noreferrer">
+      {hotpepperLabel}
     </a>
     <button
       class="nav-toggle"
@@ -34,9 +35,15 @@ const lineLabel = "LINEで予約する";
       <li><a href="#menu">メニュー</a></li>
       <li><a href="#access">アクセス</a></li>
     </ul>
-    <a class="btn btn--solid nav__cta" href={site.line} target="_blank" rel="noopener noreferrer">
-      <Icon name="line" />
-      <span>{lineLabel}</span>
-    </a>
+    <div class="nav__actions">
+      <a class="btn btn--solid nav__cta" href={site.hotpepper} target="_blank" rel="noopener noreferrer">
+        <Icon name="calendar" />
+        <span>{hotpepperLabel}</span>
+      </a>
+      <a class="btn btn--ghost nav__cta" href={site.line} target="_blank" rel="noopener noreferrer">
+        <Icon name="line" />
+        <span>{lineLabel}</span>
+      </a>
+    </div>
   </nav>
 </header>

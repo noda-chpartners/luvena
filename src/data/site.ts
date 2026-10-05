@@ -5,7 +5,7 @@ export const site = {
   nameEn: "Luvena",
   nameSub: "luna Venus",
   description:
-    "大阪市中央区・天満橋駅徒歩4分の完全予約制ヘッドスパ Luvena～luna Venus～。1席だけのプライベート空間で、ドライヘッドスパと女性限定の温活リセットをご用意。平日・土日祝24時間。ご予約はLINEから。",
+    "大阪市中央区・天満橋駅徒歩4分の完全予約制ヘッドスパ Luvena～luna Venus～。1席だけのプライベート空間で、ドライヘッドスパと女性限定の温活リセットをご用意。平日・土日祝24時間。ご予約はホットペッパーまたはLINEから。",
   phoneDisplay: "070-9443-5678",
   phoneTel: "07094435678",
   postal: "540-0033",
@@ -22,6 +22,7 @@ export const site = {
   instagram: "https://www.instagram.com/luvena_headspa/",
   instagramHandle: "@luvena_headspa",
   line: "https://lin.ee/XR2nTuh",
+  hotpepper: "https://beauty.hotpepper.jp/kr/slnH000809579/blog/bidA125024029.html",
 } as const;
 
 export const mapQuery = `${site.locality}${site.street} ${site.building}`;

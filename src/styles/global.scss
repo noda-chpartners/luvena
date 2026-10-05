@@ -299,6 +299,12 @@ input {
   color: $gold-2;
 }
 
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .nav-toggle {
   display: none;
   width: 44px;
@@ -1168,8 +1174,13 @@ input {
     letter-spacing: 0.08em;
   }
 
-  .nav__cta {
+  .nav__actions {
+    flex-direction: column;
     width: min(280px, 100%);
+  }
+
+  .nav__cta {
+    width: 100%;
   }
 }
 

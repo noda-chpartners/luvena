@@ -17,6 +17,10 @@ import Icon from "./Icon.astro";
     </address>
     <div class="footer__links">
       <a href={`tel:${site.phoneTel}`}>{site.phoneDisplay}</a>
+      <a href={site.hotpepper} target="_blank" rel="noopener noreferrer">
+        <Icon name="calendar" />
+        <span>ホットペッパーで予約</span>
+      </a>
       <a href={site.line} target="_blank" rel="noopener noreferrer">
         <Icon name="line" />
         <span>LINE</span>
